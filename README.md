@@ -4,8 +4,7 @@
 This repository is public so the community can inspect our process and for sharing among teams.**
 
 This repository contains Azure DevOPS YAML template for the compliance tasks needed for release products.
-The step templates can be included in the repository using [multi-checkout](https://docs.microsoft.com/en-us/azure/devops/pipelines/repos/multi-repo-checkout?view=azure-devops).
-
+The step templates can be included in the repository.
 ## Template setup
 
 The following sample shows how the templates can be included in your release YAML.
@@ -123,9 +122,6 @@ The paths given _must_ be upper case as the tool upper cases all paths before
 doing its comparison. Multiple patterns of the same exclusion type _must_ be
 specified with the "or" operator: `|`, not with multiple XML tags.
 
-See the internal [wiki](https://www.1eswiki.com/wiki/PoliCheck_Build_Task) for
-more information about this ADO task.
-
 ## ESRP Signing Template Overview
 
 ** Requires on-boarding, see the wiki in the internal PowerShell Maintainers teams channel **
@@ -182,8 +178,6 @@ Details can be found in the PowerShell Maintainers teams channel's Wiki tab.
 
 This example signs `dll` and `psm1` files recursively and `psd1` files in the root of the `buildOutputPath`, using minimatch.
 
-For full features see:  https://github.com/isaacs/minimatch#features
-
 ```yaml
   - template: EsrpSign.yml@ComplianceRepo
       parameters:
@@ -200,8 +194,6 @@ For full features see:  https://github.com/isaacs/minimatch#features
 ### ESRP Authenticode preview certificate
 
 This example signs `dll` and `psm1` files recursively and `psd1` files in the root of the `buildOutputPath`, using minimatch.
-
-For full features see:  https://github.com/isaacs/minimatch#features
 
 ```yaml
   - template: EsrpSign.yml@ComplianceRepo
